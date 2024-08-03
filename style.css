@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body,div,ul,li,a,p,h1,h2,h3,h4 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --bg-color: color-mix(in srgb, #f62 70%, #fff);
+    --card-color: #fff;
+    background-color: var(--bg-color);
+    font-family: montserrat;
+}
+
+.card {
+    background-color: transparent;
+    max-width: clamp(280px, 50%, 300px);
+    margin: 50px auto;
+    position: relative;
+}
+
+.card__front {
+    backface-visibility: hidden;
+    background-color: var(--card-color);
+    transition: transform 1s;
+    border-radius: 20px;
+}
+
+.card:hover .card__front{
+    transform: perspective(1200px) rotateY(180deg);
+}
+
+.card__worker {
+    height: 200px;
+    display: block;
+    overflow: hidden;
+}
+
+.card__worker img {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card__data {
+    padding: 6px;
+}
+
+.card__data span {
+    display: block;
+    font-size: 1.6rem;
+    margin: 6px 0;
+}
+
+.card__back {
+    position: absolute;
+    background-color: var(--card-color);
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: perspective(1200px) rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.card__title-skill {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.card:hover .card__back {
+    transform: perspective(900px) rotateY(360deg);
+}
+
+.card__skills {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5px;
+}
+
+.card__skills span {
+    align-self: start;
+    margin-left: 5px;
+}
+
+.card__bar {
+    width: 100%;
+    height: 40px;
+    border: 2px solid var(--bg-color);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.card__bar-bar {
+    height: 100%;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+
+.s-90 {
+    width: 90%;
+}
+
+.s-80 {
+    width: 80%;
+}
+
+.s-50 {
+    width: 50%;
+}
+
+.s-20 {
+    width: 20%;
+}
+
+.s-10 {
+    width: 10%;
+}
